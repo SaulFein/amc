@@ -1,0 +1,52 @@
+{
+  "name": "amc",
+  "version": "1.0.0",
+  "description": "A.M.C. website",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaulFein/amc.git"
+  },
+  "author": "SaulFein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaulFein/amc/issues"
+  },
+  "homepage": "https://github.com/SaulFein/amc#readme",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.0.1",
+    "mongoose": "^4.5.3",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.7",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-karma": "0.0.5",
+    "gulp-mocha": "^2.2.0",
+    "gulp-sass": "^2.3.1",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "node-sass": "^3.7.0",
+    "protractor": "^3.3.0",
+    "webpack-stream": "^3.2.0"
+  }
+}

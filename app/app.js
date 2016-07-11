@@ -22,8 +22,8 @@ app.config(['$routeProvider', function(router) {
     //   templateUrl: 'templates/home.html'
     // })
     .when('/login', {
-      // controller: 'UserController',
-      // controllerAs: 'userctrl',
+      controller: 'UserController',
+      controllerAs: 'userctrl',
       templateUrl: 'templates/login.html'
     })
     .when('/submit', {
@@ -35,5 +35,13 @@ app.config(['$routeProvider', function(router) {
       // controller: 'QuestionController',
       // controllerAs: 'questionCtrl',
       templateUrl: 'templates/inventory.html'
+    })
+    .when('/new-admin', {
+      templateUrl: 'templates/new-admin.html'
+    })
+    .when('/admin-view', {
+      controller: 'UserController',
+      controllerAs: 'userctrl',
+      templateUrl: 'templates/admin-view.html'
     })
 }])

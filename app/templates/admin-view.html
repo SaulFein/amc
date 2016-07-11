@@ -1,0 +1,19 @@
+<section ng-init="userctrl.getCars(); userctrl.checkToken()">
+  <h1>Admin view</h1>
+  <div id="add-button"><a id="submit-link" href="#/submit" ng-click="carCtrl.getCars()">add car</a></div>
+  <div id="add-button"><a id="submit-link" href="#/new-admin" ng-click="carCtrl.getCars()">add new admin</a></div>
+
+
+  <table>
+    <tr data-ng-repeat="car in userctrl.cars.inventory" class="scores">
+      <td>{{car.make}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.year}}</td>
+    </tr>
+  </table>
+
+  <footer>
+    <a id="home-link" href="#/">Done</a>
+    <a id="logout" href="#/" ng-click="userctrl.signOut()">Logout</a>
+  </footer>
+</section>

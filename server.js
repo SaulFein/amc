@@ -18,9 +18,9 @@ app.use((req, res, next) => {
   next();
 })
 
-// require(__dirname + '/routes/auth-routes')(publicRouter, models);
-// require(__dirname + '/routes/users-routes')(apiRouter, models);
-// require(__dirname + '/routes/cars-routes')(apiRouter, models);
+require(__dirname + '/routes/auth-routes')(publicRouter, models);
+require(__dirname + '/routes/users-routes')(apiRouter, models);
+require(__dirname + '/routes/cars-routes')(apiRouter, models);
 
 app.use(bodyParser.json());
 app.use('/', publicRouter);

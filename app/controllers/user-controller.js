@@ -45,12 +45,13 @@ module.exports = function(app) {
           return console.log('Problem Signing In ', err);
         } else {
           vm.error = ErrorService(null);
-          $location.path('/inventory');
+          console.log("signed in yay!!!!!!!!!!")
+          $location.path('/admin-view');
         }
       })
     }
 
-    vm.getCars = function() {
+  vm.getCars = function() {
   console.log("hit this getCars from User Controller! ======== ");
   let userId = AuthService.getId();
   CarService.getCars(userId)

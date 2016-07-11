@@ -1,0 +1,23 @@
+<section>
+  <h2>Submit Cars</h2>
+  <form id="submit-form" ng-submit="carCtrl.submit(newCar); newCar = {}">
+    Make: <input type="text" ng-model="newCar.make" value="">
+  </br>
+    Model: <input type="text" ng-model="newCar.model" value="">
+  </br>
+    Year: <input type="text" ng-model="newCar.year" value="">
+  </br>
+    Licence: <input type="text" ng-model="newCar.licence" value="">
+  </br>
+    Vin: <input type="text" ng-model="newCar.vin" value="">
+  </br>
+    Description: <input type="text" ng-model="newCar.description" value="">
+  </br>
+    Image link: <input type="text" ng-model="newCar.image" value="">
+  </br>
+
+  <button type="submit" name="button">Submit</button>
+</form>
+<div id="inv-button"><a id="inv-link" href="#/inventory">Return To Inventory</a></div>
+
+</section>

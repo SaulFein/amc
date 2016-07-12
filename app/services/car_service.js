@@ -7,7 +7,7 @@ module.exports = function(app) {
     let carService = {};
 
     carService.createCar = function(data) {
-      return $http.post(mainRoute + '/inventory', data, {
+      return $http.post(mainRoute + '/users/' + data._id + '/inventory', data, {
         headers: {
           token: AuthService.getToken()
         }
@@ -20,9 +20,12 @@ module.exports = function(app) {
       });
     };
 
-    carService.getCars = function() {
+    carService.getCars = function(userId) {
       console.log("carService get Cars top")
-      return $http.get('http://localhost:3000/inventory', {
+      return $http.get(mainRoute + '/users/' + userId + '/inventory', {
+        headers: {
+          token: AuthService.getToken()
+        }
       })
       // .then((res)=>{
       //   console.log("carService res ", res.data.data[0]);

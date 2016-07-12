@@ -64,7 +64,7 @@ module.exports = (router, models) => {
           if(err){
             return res.json({message: err});
           }
-          console.log("trying to get cars from auth rotes")
+          console.log("trying to get cars from auth routes")
           res.status(200).json({message: 'All Cars', data: cars});
         });
       })

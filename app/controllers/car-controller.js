@@ -11,11 +11,11 @@ module.exports = function(app){
     vm.showNextButton;
     vm.curCar = 0;
 
-    vm.getCars = function(){
+    vm.getCars = function(data){
       cUser = $window.localStorage.user
       console.log('This is getCars Data from carController')
       // console.log('This is current Car ' + vm.curCar);
-      CarService.getCars()
+      CarService.getCars(cUser)
         .then(function(res) {
         // console.log("this is res.data from getCars User Control ", res.data)
           vm.cars = res.data.data;
@@ -31,7 +31,7 @@ module.exports = function(app){
       console.log('this is ', c);
       console.log('this is userID ' + cUser);
       // CarService.createCar(c);
-      $http.post('http://localhost:3000/api/inventory',  c, {
+      $http.post(url + cUser + '/inventory',  c, {
         headers: {
           token: AuthService.getToken()
         }

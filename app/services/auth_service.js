@@ -24,9 +24,10 @@ module.exports = function(app) {
         return userId || $window.localStorage.user;
       },
       signOut(cb) {
-        token = null;
+        // token = null;
         // userId = null;
-        $window.localStorage.token = null;
+        delete $window.localStorage['token'];
+        // $window.localStorage.token = null;
         $window.localStorage.user = null;
         if (cb) cb();
       },

@@ -83,8 +83,7 @@ module.exports = function(app) {
     // }
 
     vm.checkToken = function() {
-      console.log("usercntrl checkToken! " + $window.localStorage.token)
-      if ($window.localStorage.token === null){
+      if(!$window.localStorage.token){
         $location.path('/')
       }
     }

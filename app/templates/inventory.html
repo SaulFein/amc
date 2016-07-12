@@ -1,9 +1,9 @@
-<section ng-init="userctrl.getCars(); userctrl.checkToken()">
-  <h2 id="car-title">Make: {{userctrl.curCar.make}}</h2>
-  <h2 id="car-model">Model: {{userctrl.curCar.model}}</h2>
+<section ng-init="carCtrl.getCars();">
+  <h2 id="car-title">Make: {{carCtrl.cars.make}}</h2>
+  <h2 id="car-model">Model: {{carCtrl.cars.model}}</h2>
 
 <table>
-  <tr data-ng-repeat="car in userctrl.cars.inventory" class="scores">
+  <tr data-ng-repeat="car in carCtrl.cars" class="scores">
     <td>{{car.make}}</td>
     <td>{{car.model}}</td>
     <td>{{car.year}}</td>

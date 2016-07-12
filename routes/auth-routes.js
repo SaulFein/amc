@@ -6,6 +6,8 @@ module.exports = (router, models) => {
 
   let basicHTTP = require(__dirname + '/../lib/basicHTTP.js');
   let jsonParser = require('body-parser').json();
+  let jwtAuth = require(__dirname + '/../lib/jwtAuth.js');
+
   let userId;
 
   router.route('/signup')
@@ -56,20 +58,18 @@ module.exports = (router, models) => {
       });
     });
 
-    // router.route('/users/:user/inventory')
-    //   .get((req, res) => {
-    //     User
-    //     .findById(userId)
-    //     .populate('inventory')
-    //     .exec((err, user) => {
-    //       if (err) {
-    //         console.log("ERRROORRR " + err)
-    //         return res.send(err);
-    //       }
-    //       console.log('Populate ' + user)
-    //       res.status(200).json({message: 'Returned User', data: user});
-    //     });
-    //   })
+    router.route('/inventory')
+      .get((req, res) => {
+        Car.find((err, cars)=>{
+          if(err){
+            return res.json({message: err});
+          }
+          console.log("trying to get cars from auth rotes")
+          res.status(200).json({message: 'All Cars', data: cars});
+        });
+      })
+
+
 
   //     .put(jwtAuth, (req, res) => {
   //       User.findByIdAndUpdate(req.params.user, req.body, {new: true}, (err, user) => {

@@ -54,11 +54,13 @@ module.exports = function(app) {
   vm.getCars = function() {
   console.log("hit this getCars from User Controller! ======== ");
   let userId = AuthService.getId();
-  CarService.getCars(userId)
+  CarService.getCars()
     .then(function(res) {
+      // console.log("this is res.data from getCars User Control ", res.data)
       vm.cars = res.data.data;
-      vm.curCar = vm.cars.inventory[vm.curPos];
-      console.log("This is cur Car ", vm.curCar );
+      // vm.curCar = vm.cars.inventory[vm.curPos];
+      // console.log("This is cur Car ", vm.curCar );
+      // console.log("This is cur Car ", vm.cars);
     }, function(err) {
       console.log(err);
     });
@@ -81,7 +83,8 @@ module.exports = function(app) {
     // }
 
     vm.checkToken = function() {
-      if (!$window.localStorage.token){
+      console.log("usercntrl checkToken! " + $window.localStorage.token)
+      if ($window.localStorage.token === null){
         $location.path('/')
       }
     }

@@ -94,7 +94,7 @@ gulp.task('build', ['build:html', 'build:templates', 'bundle', 'build:css'])
 
 gulp.task('default', ['lint', 'mocha']);
 
-// var watcher = gulp.watch(paths, ['lint', 'mocha']);
+// var watcher = gulp.watch(paths, sources, ['lint', 'mocha']);
 //
 // watcher.on('change', function(event) {
 //   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');

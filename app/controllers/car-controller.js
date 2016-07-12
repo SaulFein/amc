@@ -6,17 +6,23 @@ module.exports = function(app){
     let carId;
 
     let vm = this;
-    vm.allCars = [];
+    vm.cars = [];
     vm.user = $window.localStorage.user
     vm.showNextButton;
     vm.curCar = 0;
 
-    vm.getCars = function(data){
+    vm.getCars = function(){
       cUser = $window.localStorage.user
-      console.log('This is current Car ' + vm.curCar);
-      vm.allCars = CarService.getCars(cUser);
-      vm.curCar = vm.allCars[vm.curCar];
-      console.log('This is current Car ' + vm.curCar);
+      console.log('This is getCars Data from carController')
+      // console.log('This is current Car ' + vm.curCar);
+      CarService.getCars()
+        .then(function(res) {
+        // console.log("this is res.data from getCars User Control ", res.data)
+          vm.cars = res.data.data;
+          console.log('this is carContrler getCars all cars ', vm.cars);
+      // vm.curCar = vm.allCars[vm.curCar];
+      // console.log('This is current Car ' + vm.curCar);
+      });
     }
 
     //used to populate db
@@ -25,7 +31,7 @@ module.exports = function(app){
       console.log('this is ', c);
       console.log('this is userID ' + cUser);
       // CarService.createCar(c);
-      $http.post(url + cUser + '/inventory',  c, {
+      $http.post('http://localhost:3000/api/inventory',  c, {
         headers: {
           token: AuthService.getToken()
         }

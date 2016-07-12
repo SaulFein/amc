@@ -20,6 +20,7 @@ module.exports = function(app) {
         return token || $window.localStorage.token;
       },
       getId(){
+        console.log("Authservice Get ID")
         return userId || $window.localStorage.user;
       },
       signOut(cb) {

@@ -40,8 +40,8 @@ app.config(['$routeProvider', function(router) {
       templateUrl: 'templates/new-admin.html'
     })
     .when('/admin-view', {
-      controller: 'UserController',
-      controllerAs: 'userctrl',
+      // controller: 'UserController',
+      // controllerAs: 'userctrl',
       templateUrl: 'templates/admin-view.html'
     })
 }])
